@@ -1,0 +1,6 @@
+.businessList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px;
+  }

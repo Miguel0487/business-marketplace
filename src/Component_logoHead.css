@@ -1,0 +1,17 @@
+.barralogo {
+    background-color: #007bff;
+    height: 10px;
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    padding-left: 10px;
+    padding-top: 45px;
+}
+
+.logoweb {
+    display: flex;
+    align-items: center; /* Centra verticalmente el logo */
+}
+
+.logo-img {
+    height:130px;
+}
