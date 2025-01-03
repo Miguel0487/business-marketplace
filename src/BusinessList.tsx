@@ -1,12 +1,12 @@
-import React from 'react';
-import './BusinessList.css';
-import BusinessCard from './BusinessCard';
-import startup from './images/startup.jpg';
-import coffeeshop from './images/A-Coffee-Shop-Business.jpg';
-import ecofriendlyshop from './images/ecofriendly shop.jpg';
-import fitnessgym from './images/gym.png';
-import bakery from './images/gourmet.jpg';
-import digitalmkt from './images/B2B-Digital-Marketing-Agency-scaled.jpeg';
+import React from "react";
+import "./BusinessList.css";
+import startup from "./images/startup.jpg";
+import coffeeshop from "./images/A-Coffee-Shop-Business.jpg";
+import ecofriendlyshop from "./images/ecofriendly shop.jpg";
+import fitnessgym from "./images/gym.png";
+import bakery from "./images/gourmet.jpg";
+import digitalmkt from "./images/B2B-Digital-Marketing-Agency-scaled.jpeg";
+import BusinessCard from "./BusinessCard";
 
 function BusinessList() {
   const businesses = [
@@ -39,7 +39,8 @@ function BusinessList() {
       id: 4,
       image: bakery,
       name: "Gourmet Bakery",
-      description: "A family-owned bakery specializing in artisan breads and pastries.",
+      description:
+        "A family-owned bakery specializing in artisan breads and pastries.",
       location: "Portland, OR",
       price: 150000,
     },
@@ -48,7 +49,8 @@ function BusinessList() {
       id: 5,
       image: digitalmkt,
       name: "Digital Marketing Agency",
-      description: "A well-established agency with recurring contracts and a talented team.",
+      description:
+        "A well-established agency with recurring contracts and a talented team.",
       location: "Remote",
       price: 500000,
     },
@@ -57,20 +59,22 @@ function BusinessList() {
       id: 6,
       image: fitnessgym,
       name: "Fitness Studio",
-      description: "Modern fitness studio with state-of-the-art equipment and a loyal client base.",
+      description:
+        "Modern fitness studio with state-of-the-art equipment and a loyal client base.",
       location: "Miami, FL",
       price: 300000,
     },
-
-
   ];
 
-  const handleContactSeller = (name) => {
+  const handleContactSeller = (name: string) => {
     alert(`Contacting the seller of ${name}`);
   };
 
   return (
-    <div className='businessList' style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+    <div
+      className="businessList"
+      style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}
+    >
       {businesses.map((business) => (
         <BusinessCard
           key={business.id}
