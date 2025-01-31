@@ -1,21 +1,28 @@
 import React from "react";
-import "./Component_bar.css";
 
 function NavBar() {
   return (
-    <nav className="navigationbar">
-      <ul className="main-links">
-        <li>
-          <a href="#">Buy a Business</a>
+    <nav className="bg-blue-500 py-4 w-full">
+      <ul className="flex justify-center list-none m-0 p-0">
+        <li className="mr-5">
+          <a href="#" className="text-white no-underline text-xl font-bold hover:text-[#2f5d6b]">
+            Buy a Business
+          </a>
+        </li>
+        <li className="mr-5">
+          <a href="#" className="text-white no-underline text-xl font-bold hover:text-[#2f5d6b]">
+            Buy a Franchise
+          </a>
+        </li>
+        <li className="mr-5">
+          <a href="#" className="text-white no-underline text-xl font-bold hover:text-[#2f5d6b]">
+            Sell a Business
+          </a>
         </li>
         <li>
-          <a href="#">Buy a Franchise</a>
-        </li>
-        <li>
-          <a href="#">Sell a Business</a>
-        </li>
-        <li>
-          <a href="#">Sell a Franchise</a>
+          <a href="#" className="text-white no-underline text-xl font-bold hover:text-[#2f5d6b]">
+            Sell a Franchise
+          </a>
         </li>
       </ul>
     </nav>
