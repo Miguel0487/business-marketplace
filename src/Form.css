@@ -1,0 +1,19 @@
+.myButton {
+   border: 1px solid rgb(0, 123, 255);
+   background-color: rgb(0, 123, 255);
+   margin-top: 25px;
+   margin-bottom: 5px;
+}
+
+.myButton:hover {
+    background-color: #4cbfd3;
+    border-color: #4cbfd3;
+  }
+
+.emailInput {
+    border: 1px solid rgb(0, 123, 255);
+}
+
+.usernameInput {
+    border: 1px solid rgb(0, 123, 255);
+}
