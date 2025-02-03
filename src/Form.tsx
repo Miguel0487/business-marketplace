@@ -1,38 +1,34 @@
-import React, { useState } from "react";
-import "./Form.css";
 
-function MyForm() {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-
-  // Cambia el tipo de 'e' a React.FormEvent<HTMLFormElement>
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault(); // Evita que la página se recargue
-    // Aquí puedes procesar los datos o enviarlos a un servidor
-    console.log("Form Submitted", username, email);
-  };
-
+const NewsletterForm = () => {
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        className="usernameInput"
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        placeholder="Username"
-        required
-      />
-      <input
-        className="emailInput"
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-        required
-      />
-      <button className="myButton" type="submit">Submit</button>
-    </form>
+    <div className="max-w-lg mx-auto p-6">
+      <h2 className="text-lg font-bold mb-6 text-center">
+        Would you like to receive our newsletter for free?
+      </h2>
+      
+      <form className="space-y-4">
+        <div className="flex flex-col md:flex-row gap-4">
+          <input
+            type="text"
+            placeholder="Username"
+            className="flex-1 p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            className="flex-1 p-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none"
+          />
+        </div>
+        
+        <button
+          type="submit"
+          className="w-full bg-[#007bff] hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200"
+        >
+          Subscribe to Newsletter
+        </button>
+      </form>
+    </div>
   );
-}
+};
 
-export default MyForm;
+export default NewsletterForm;

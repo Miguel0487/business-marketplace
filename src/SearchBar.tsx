@@ -85,36 +85,40 @@ const businesses = [
             },
   ];
 
-const SearchBar = () => {
-  const [searchInput, setSearchInput] = useState(""); // Estado para manejar la entrada
-  const [filteredBusinesses, setFilteredBusinesses] = useState(businesses); // Estado para manejar los resultados filtrados
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setSearchInput(value);
-
-    if (value.trim() === "") {
-      setFilteredBusinesses(businesses);
-    } else {
-      const filtered = businesses.filter((business) =>
-        business.name.toLowerCase().includes(value.toLowerCase()) // Búsqueda insensible a mayúsculas/minúsculas
-      );
-      setFilteredBusinesses(filtered); // Si no hay coincidencias, no se muestra ninguno
-    }
+  const SearchBar = () => {
+    const [searchInput, setSearchInput] = useState(""); 
+    const [filteredBusinesses, setFilteredBusinesses] = useState(businesses); 
+  
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+      setSearchInput(value);
+  
+      if (value.trim() === "") {
+        setFilteredBusinesses(businesses);
+      } else {
+        // Usamos 'value' en lugar de 'searchTerm' que no estaba definido
+        const searchTerm = value.toLowerCase();
+        const filtered = businesses.filter((business) =>
+          business.name.toLowerCase().includes(searchTerm) ||
+          business.location.toLowerCase().includes(searchTerm) ||
+          business.price.toString().includes(searchTerm)
+        );
+        setFilteredBusinesses(filtered);
+      }
+    };
+  
+    return (
+      <div>
+        <input 
+          className="p-2 border border-gray-300 rounded-lg w-full max-w-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-6"
+          type="text"
+          value={searchInput}
+          onChange={handleChange}
+          placeholder="Search..."
+        />
+        <BusinessList businesses={filteredBusinesses} />
+      </div>
+    );
   };
-
-  return (
-    <div>
-      <input className="search-container"
-        type="text"
-        value={searchInput}
-        onChange={handleChange}
-        placeholder="Search..."
-        
-      />
-      <BusinessList businesses={filteredBusinesses} /> {/* Pasamos los negocios filtrados al componente */}
-    </div>
-  );
-};
-
-export default SearchBar;
+  
+  export default SearchBar;
